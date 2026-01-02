@@ -1,0 +1,7 @@
+ultralytics
+torch
+opencv-python-headless
+pyyaml
+fastapi
+uvicorn
+boto3
