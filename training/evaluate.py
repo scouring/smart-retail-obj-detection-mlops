@@ -2,7 +2,7 @@ import os
 import json
 import boto3
 from ultralytics import YOLO
-import datetime
+from datetime import datetime, timezone
 
 BUCKET = os.environ["S3_BUCKET"]
 
@@ -22,7 +22,7 @@ s3 = boto3.client("s3")
 s3.upload_file("metrics.json", BUCKET, "metrics/latest/metrics.json")
 
 # Save metrics to S3
-timestamp = datetime.now(datetime.timezone.utc).strftime("%Y%m%d-%H%M%S")
+timestamp = datetime.now(timezone.utc).strftime("%Y%m%d-%H%M%S")
 
 # Upload all files in runs/detect/val/
 val_dir = "runs/detect/val"
