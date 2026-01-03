@@ -13,4 +13,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY training/ training/
 
-CMD ["python", "training/train.py"]
+CMD ["python", "training/pipeline.py"]
