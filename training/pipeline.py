@@ -1,5 +1,9 @@
 import os
 import subprocess
+import boto3
+
+print(boto3.client("sts").get_caller_identity())
+
 
 print("Starting training...")
 subprocess.run(["python", "training/train.py"], check=True)
